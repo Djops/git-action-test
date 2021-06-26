@@ -27,7 +27,9 @@ jobs:
            aws-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
            aws-region: ${{ env.AWS_REGION_NAME }}
       - name: Copy Deployment package to S3 bucket
-        run: aws s3 cp ${{ env.DEPLOY_PACKAGE_NAME}} s3://adv-it-flask-application-packeges
+        run: aws s3 cp ${{ env.DEPLOY_PACKAGE_NAME}}
+      - uses: actions/checkout@master
+      - uses: adv-it-flask-application-packeges/s3-upload-action@master  
       
       - name: Print Happy Message for CI finish
         run: echo "CI Pipline part finished successfully!"
