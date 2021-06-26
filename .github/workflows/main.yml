@@ -13,12 +13,6 @@ jobs:
       - name: Git clone our repo
         uses: actions/checkout@v1
       - run: zip -r ${{ env.DEPLOY_PACKAGE_NAME}} ./ -x *.git*
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       
       - name: Configure my AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
