@@ -25,7 +25,7 @@ jobs:
       - name: Copy Deployment package to S3 bucket
         run: aws s3 cp ${{ env.DEPLOY_PACKAGE_NAME }}
       - uses: actions/checkout@master
-      - uses: ${{env.EB_PACKAGE_S3_BUCKET_NAME}}/s3-sync-action@master
+      - uses: adv-it-flask-application-packeges/s3-sync-action@master
       
       - name: Print Happy Message for CI finish
         run: echo "CI Pipline part finished successfully!"
