@@ -44,12 +44,12 @@ jobs:
        aws elasticbeanstalk create-application-version \
        --application-name ${{env.EB_APPLICATION_NAME}} \
        --source-bundle S3Bucket="${{env.EB_PACKAGE_S3_BUCKET_NAME}}",S3Key="${{env.DEPLOY_PACKAGE_NAME}}" \
-       --version-label v12
+       --version-label v13
 
        
        
    - name: Deploy new ElasticBeanstalk Application Version
-     run: aws elasticbeanstalk update-environment --application-name MyFlask --environment-name my-env --version-label v12
+     run: aws elasticbeanstalk update-environment --application-name MyFlask --environment-name adv-it-flask-application-packeges --version-label v13
      
    - name: Print Happy Message for CD finish
      run: echo "CD Pipline part finished successfully!"
